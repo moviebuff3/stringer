@@ -19,6 +19,30 @@ Invoke it by asking — "humanize this", "rewrite so it doesn't sound AI-written
 or point it at a file. Paste 2-3 paragraphs of your own writing first and it
 matches your voice instead of producing generic clean output.
 
+### `.claude/skills/rigor/`
+
+An operating-discipline skill: orient before acting, deduce instead of
+assuming, orchestrate resources (subagents, skills, parallel tool calls,
+empirical checks) deliberately, and verify before claiming done. It loads
+automatically in any session opened on this repo and applies to any
+non-trivial task — coding, debugging, research, multi-step work.
+
+To make it apply in **every** session on your machine, not just sessions on
+this repo, copy it into your global Claude config once:
+
+```powershell
+# Windows
+mkdir "$env:USERPROFILE\.claude\skills" -Force
+Copy-Item -Recurse .claude\skills\rigor "$env:USERPROFILE\.claude\skills\rigor"
+```
+
+```bash
+# macOS / Linux
+mkdir -p ~/.claude/skills && cp -r .claude/skills/rigor ~/.claude/skills/rigor
+```
+
+Global skills load in every project. Re-copy after pulling updates to the skill.
+
 ## What cannot persist here
 
 ### freellmapi
