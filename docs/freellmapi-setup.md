@@ -8,7 +8,7 @@ unified key, and rejects unauthenticated `/v1` calls.
 
 freellmapi is limited to two cases. It is not a general-purpose backend.
 
-1. **Simple foodrebel tasks.** High-volume, low-stakes calls where a weaker
+1. **Simple FoodRebel tasks.** High-volume, low-stakes calls where a weaker
    model is good enough: ingredient parsing, tag and category extraction,
    description drafts, embeddings for recipe search, test fixtures.
 2. **Token exhaustion.** A fallback when the primary paid API is rate-limited
